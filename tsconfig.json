@@ -1,6 +1,6 @@
 {
   "include": [
-    "src"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules"
@@ -11,10 +11,10 @@
       "dom.iterable",
       "esnext"
     ],
-    "outDir": "./dist/",
+    "outDir": "./dist",
     "target": "esnext",
     "strict": true,
-    "rootDir": ".",
+    "rootDir": "./src",
     "baseUrl": ".",
     "declaration": true,
     "esModuleInterop": true,

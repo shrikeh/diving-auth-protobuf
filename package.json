@@ -2,18 +2,29 @@
   "name": "@shrikeh/diving-auth-protobuf",
   "version": "0.1.1",
   "type": "module",
-  "main": "src/",
+  "main": "dist/Protobuf/auth.js",
   "files": [
-    "src/"
+    "dist/"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@babel/runtime": "^7.15.4",
     "@grpc/grpc-js": "1.4.1",
     "@types/node": "^16.11.0",
     "@types/protobufjs": "^6.0.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "barrelsby": "^2.3.0",
     "dotenv": "^10.0.0",
     "grpc_tools_node_protoc_ts": "^5.3.2",
     "ts-node": "^10.3.0",
     "tsc": "^2.0.3",
+    "tsconfig-paths": "^3.11.0",
     "typescript": "^4.4.4"
   },
   "dependencies": {
@@ -22,7 +33,10 @@
   },
   "scripts": {
     "protobuf:generate": "yarn protobuf:generate-js && yarn protobuf:generate-ts",
-    "protobuf:generate-js": "pbjs -t static-module -w es6 protobuf/auth.proto > src/Protobuf/auth.js",
-    "protobuf:generate-ts": "pbts -o src/Protobuf/auth.d.ts src/Protobuf/auth.js"
+    "protobuf:generate-js": "pbjs -t static-module -w commonjs protobuf/auth.proto > src/Protobuf/auth.js",
+    "protobuf:generate-ts": "pbts -o src/Protobuf/index.d.ts src/Protobuf/auth.js",
+    "generate-barrels": "barrelsby --delete --config ./barrelsby.json",
+    "generate-declarations": "tsc --emitDeclarationOnly",
+    "compile": "babel src --out-dir dist"
   }
 }

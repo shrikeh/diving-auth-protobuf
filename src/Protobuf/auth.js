@@ -1,20 +1,22 @@
 /*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
-import * as $protobuf from "protobufjs/minimal";
+"use strict";
+
+var $protobuf = require("protobufjs/minimal");
 
 // Common aliases
-const $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
+var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
 
 // Exported root namespace
-const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
+var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-export const auth = $root.auth = (() => {
+$root.auth = (function() {
 
     /**
      * Namespace auth.
      * @exports auth
      * @namespace
      */
-    const auth = {};
+    var auth = {};
 
     auth.EncryptedCredentials = (function() {
 
@@ -35,7 +37,7 @@ export const auth = $root.auth = (() => {
          */
         function EncryptedCredentials(properties) {
             if (properties)
-                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
@@ -104,9 +106,9 @@ export const auth = $root.auth = (() => {
         EncryptedCredentials.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            let end = length === undefined ? reader.len : reader.pos + length, message = new $root.auth.EncryptedCredentials();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.auth.EncryptedCredentials();
             while (reader.pos < end) {
-                let tag = reader.uint32();
+                var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
                     message.credentials = reader.string();
@@ -163,7 +165,7 @@ export const auth = $root.auth = (() => {
         EncryptedCredentials.fromObject = function fromObject(object) {
             if (object instanceof $root.auth.EncryptedCredentials)
                 return object;
-            let message = new $root.auth.EncryptedCredentials();
+            var message = new $root.auth.EncryptedCredentials();
             if (object.credentials != null)
                 message.credentials = String(object.credentials);
             return message;
@@ -181,7 +183,7 @@ export const auth = $root.auth = (() => {
         EncryptedCredentials.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
-            let object = {};
+            var object = {};
             if (options.defaults)
                 object.credentials = "";
             if (message.credentials != null && message.hasOwnProperty("credentials"))
@@ -223,7 +225,7 @@ export const auth = $root.auth = (() => {
          */
         function BearerToken(properties) {
             if (properties)
-                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
@@ -302,9 +304,9 @@ export const auth = $root.auth = (() => {
         BearerToken.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            let end = length === undefined ? reader.len : reader.pos + length, message = new $root.auth.BearerToken();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.auth.BearerToken();
             while (reader.pos < end) {
-                let tag = reader.uint32();
+                var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
                     message.token = reader.string();
@@ -351,7 +353,7 @@ export const auth = $root.auth = (() => {
                 if (!$util.isString(message.token))
                     return "token: string expected";
             if (message.expiry != null && message.hasOwnProperty("expiry")) {
-                let error = $root.google.protobuf.Timestamp.verify(message.expiry);
+                var error = $root.google.protobuf.Timestamp.verify(message.expiry);
                 if (error)
                     return "expiry." + error;
             }
@@ -369,7 +371,7 @@ export const auth = $root.auth = (() => {
         BearerToken.fromObject = function fromObject(object) {
             if (object instanceof $root.auth.BearerToken)
                 return object;
-            let message = new $root.auth.BearerToken();
+            var message = new $root.auth.BearerToken();
             if (object.token != null)
                 message.token = String(object.token);
             if (object.expiry != null) {
@@ -392,7 +394,7 @@ export const auth = $root.auth = (() => {
         BearerToken.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
-            let object = {};
+            var object = {};
             if (options.defaults) {
                 object.token = "";
                 object.expiry = null;
@@ -489,14 +491,14 @@ export const auth = $root.auth = (() => {
     return auth;
 })();
 
-export const google = $root.google = (() => {
+$root.google = (function() {
 
     /**
      * Namespace google.
      * @exports google
      * @namespace
      */
-    const google = {};
+    var google = {};
 
     google.protobuf = (function() {
 
@@ -505,7 +507,7 @@ export const google = $root.google = (() => {
          * @memberof google
          * @namespace
          */
-        const protobuf = {};
+        var protobuf = {};
 
         protobuf.Timestamp = (function() {
 
@@ -527,7 +529,7 @@ export const google = $root.google = (() => {
              */
             function Timestamp(properties) {
                 if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
@@ -606,9 +608,9 @@ export const google = $root.google = (() => {
             Timestamp.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Timestamp();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Timestamp();
                 while (reader.pos < end) {
-                    let tag = reader.uint32();
+                    var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         message.seconds = reader.int64();
@@ -671,7 +673,7 @@ export const google = $root.google = (() => {
             Timestamp.fromObject = function fromObject(object) {
                 if (object instanceof $root.google.protobuf.Timestamp)
                     return object;
-                let message = new $root.google.protobuf.Timestamp();
+                var message = new $root.google.protobuf.Timestamp();
                 if (object.seconds != null)
                     if ($util.Long)
                         (message.seconds = $util.Long.fromValue(object.seconds)).unsigned = false;
@@ -698,10 +700,10 @@ export const google = $root.google = (() => {
             Timestamp.toObject = function toObject(message, options) {
                 if (!options)
                     options = {};
-                let object = {};
+                var object = {};
                 if (options.defaults) {
                     if ($util.Long) {
-                        let long = new $util.Long(0, 0, false);
+                        var long = new $util.Long(0, 0, false);
                         object.seconds = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
                     } else
                         object.seconds = options.longs === String ? "0" : 0;
@@ -737,4 +739,4 @@ export const google = $root.google = (() => {
     return google;
 })();
 
-export { $root as default };
+module.exports = $root;
