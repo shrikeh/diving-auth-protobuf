@@ -1,6 +1,6 @@
 {
   "name": "@shrikeh/diving-auth-protobuf",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "main": "dist/Protobuf/auth.js",
   "files": [
