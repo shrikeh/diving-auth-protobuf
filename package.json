@@ -16,7 +16,7 @@
     "@babel/preset-typescript": "^7.15.0",
     "@babel/runtime": "^7.15.4",
     "@grpc/grpc-js": "1.4.1",
-    "@types/node": "^16.11.0",
+    "@types/node": "16.11.41",
     "@types/protobufjs": "^6.0.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "barrelsby": "^2.3.0",
