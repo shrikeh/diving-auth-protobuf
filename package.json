@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "grpc-tools": "^1.11.2",
-    "protobufjs": "^6.11.2"
+    "protobufjs": "^7.0.0"
   },
   "scripts": {
     "protobuf:generate": "yarn protobuf:generate-js && yarn protobuf:generate-ts",
