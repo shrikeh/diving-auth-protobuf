@@ -1136,9 +1136,9 @@
   integrity sha512-9iI3OOlkyOjLQQ9s+itIJNMRepDhB/96jW3fqduJ2FTPQj1dJjw6Q3QCImF9FE1wmdBs5QSun4FjDSFS8d8JLw==
 
 "@types/node@^16.11.0":
-  version "16.11.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.0.tgz#4b95f2327bacd1ef8f08d8ceda193039c5d7f52e"
-  integrity sha512-8MLkBIYQMuhRBQzGN9875bYsOhPnf/0rgXGo66S2FemHkhbn9qtsz9ywV1iCG+vbjigE4WUNVvw37Dx+L0qsPg==
+  version "16.18.91"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.91.tgz#3e7b3b3d28f740e3e2d4ceb7ad9d16e6b9277c91"
+  integrity sha512-h8Q4klc8xzc9kJKr7UYNtJde5TU2qEePVyH3WyzJaUC+3ptyc5kPQbWOIUcn8ZsG5+KSkq+P0py0kC0VqxgAXw==
 
 "@types/protobufjs@^6.0.0":
   version "6.0.0"
